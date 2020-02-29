@@ -1,0 +1,20 @@
+## Macro title: Calibre ebooks
+## A simple macro for viewing available ebooks from calibre web.
+##
+## Developed by: Christian Knedel
+## Date created: 29/02/2020
+##
+## @param Query:title=calibre-Query|type=string|required=true|desc=Calibre Query e.g. Docker
+## @param Url:title=calibre-Url|type=string|required=true|desc=Calibre Base Url|default=http://192.168.178.46:8080/search?query=
+## @param Height:title=iFrame Height|type=int|default=500
+
+<style>
+.calibre {background:#45b29d;padding:1px;position:relative}
+.calibre iframe {border:0;width:100%;}
+.calibre span {padding:5px; background:#fffae6;display:block}
+</style>
+
+<div class="calibre">
+<span>Quelle: <a href="$paramUrl$paramQuery">$paramUrl$paramQuery</a></span>
+<iframe height="$paramHeight" id="calibreFrame" src="$paramUrl$paramQuery"></iframe>
+</div>
